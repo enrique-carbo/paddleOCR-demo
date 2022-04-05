@@ -19,7 +19,7 @@ def inference(img, lang):
     im_show = draw_ocr(image, boxes, txts, scores, font_path='RightSans.ttf') 
     im_show = Image.fromarray(im_show)
     im_show.save('result.jpg')
-    return 'result.jpg'
+    return 'result.jpg', result
     
 
 title = 'PaddleOCR'
@@ -30,7 +30,7 @@ css = ".output_image, .input_image {height: 40rem !important; width: 100% !impor
 gr.Interface(
     inference,
     [gr.inputs.Image(type='file', label='Input'),gr.inputs.Dropdown(choices=['ch', 'en', 'fr', 'german', 'korean', 'japan'], type="value", default='en', label='language')],
-    gr.outputs.Image(type='file', label='Output'),
+    [gr.outputs.Image(type='file', label='Output'), gr.outputs.Textbox(type='text', label='Prediction')],
     title=title,
     description=description,
     article=article,

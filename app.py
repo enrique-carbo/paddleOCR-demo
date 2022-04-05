@@ -17,7 +17,7 @@ def inference(img, lang):
     txts = [line[1][0] for line in result]
     scores = [line[1][1] for line in result]
     im_show = draw_ocr(image, boxes, txts, scores,
-                       font_path='simfang.ttf')
+                       font_path='RightSans.ttf')
     im_show = Image.fromarray(im_show)
     im_show.save('result.jpg')
     return 'result.jpg'

@@ -19,7 +19,7 @@ def inference(img, lang):
     im_show = draw_ocr(image, boxes, txts, scores, font_path='RightSans.ttf') 
     im_show = Image.fromarray(im_show)
     im_show.save('result.jpg')
-    return 'result.jpg', result
+    return 'result.jpg', result[0][1]
     
 
 title = 'PaddleOCR'

@@ -16,11 +16,11 @@ def inference(img, lang):
     boxes = [line[0] for line in result]
     txts = [line[1][0] for line in result]
     scores = [line[1][1] for line in result]
-    im_show = draw_ocr(image, boxes, txts, scores,
-                       font_path='RightSans.ttf')
+    im_show = draw_ocr(image, boxes, txts, scores) #font_path='RightSans.ttf'
     im_show = Image.fromarray(im_show)
     im_show.save('result.jpg')
     return 'result.jpg'
+    
 
 title = 'PaddleOCR'
 description = 'Gradio demo for PaddleOCR. PaddleOCR demo supports Chinese, English, French, German, Korean and Japanese.To use it, simply upload your image and choose a language from the dropdown menu, or click one of the examples to load them. Read more at the links below.'

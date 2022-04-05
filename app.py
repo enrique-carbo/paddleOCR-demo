@@ -30,7 +30,7 @@ css = ".output_image, .input_image {height: 40rem !important; width: 100% !impor
 gr.Interface(
     inference,
     [gr.inputs.Image(type='file', label='Input'),gr.inputs.Dropdown(choices=['ch', 'en', 'fr', 'german', 'korean', 'japan'], type="value", default='en', label='language')],
-    [gr.outputs.Image(type='file', label='Output'), gr.outputs.Textbox(type='text', label='Prediction')],
+    [gr.outputs.Image(type='file', label='Output'), gr.outputs.Textbox(type='str', label='Prediction')],
     title=title,
     description=description,
     article=article,
